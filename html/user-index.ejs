@@ -1,0 +1,271 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Excel Classes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="image/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/user-style.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/stuprof-style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+
+<body>
+
+  <div class="sidebar-container">
+    <div class="sidebar-logo">
+      ExcelJee
+    </div>
+    <ul class="sidebar-navigation">
+      <li>
+        <a id="showprofile">
+          <i class="fas fa-user" aria-hidden="true"></i> Profile
+        </a>
+      </li>
+      <li>
+        <a href="seett">
+          <i class="fas fa-file-alt" aria-hidden="true"></i> Time Table
+        </a>
+      </li>
+      <li>
+        <a href="online-exam">
+          <i class="fas fa-file-alt" aria-hidden="true"></i> Online Exam
+        </a>
+      </li>
+      <li>
+        <a href="joinmeeting">
+          <i class="fa fa-users" aria-hidden="true"></i> Online Class
+        </a>
+      </li>
+      <li>
+        <a href="studymaterial">
+          <i class="fa fa-file-alt" aria-hidden="true"></i> Study Material
+        </a>
+      </li>
+      <li class="dropdown show">
+        <a class="dropdown-toggle" style="background-color:transparent;" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-question" aria-hidden="true"></i>Doubt</a>
+        <div class="dropdown-menu" style="background-color:black; " aria-labelledby="dropdownMenuLink">
+          <a id="showdoubtform" class="dropdown-item ssss" style="padding-left:25px;color:white;" >
+            Ask Doubt
+          </a>
+          <a class="dropdown-item ssss" style="padding-left:25px;" href="doubtsTable">
+            Show Doubt
+          </a>
+        </div>
+      </li>
+      <li>
+        <a id="showfeedbackform">
+          <i class="fa fa-info-circle" aria-hidden="true"></i> FeedBack
+        </a>
+      </li>
+      <li>
+        <a href="logout">
+          <i class="fa fa-sign-out-alt" aria-hidden="true"></i> Logout
+        </a>
+      </li>
+
+    </ul>
+    <div class="social_media">
+      <div class="social_media_icon"><a href="#"><i class="icon fab fa-facebook-f fa-sm"></i></a></div>
+      <!-- <a  href="#" ><i class="icon fab fa-facebook-f fa-sm"></i></a> -->
+      <a href="#" class="social_media_icon"><i class="icon fab fa-twitter"></i></a>
+      <a href="#" class="social_media_icon"><i class="icon fab fa-instagram"></i></a>
+    </div>
+
+
+  </div>
+  <div class="body-container" id="profile">
+    <div class="container">
+      <div class="main-body">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="main-breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+          </ol>
+        </nav>
+        <!-- /Breadcrumb -->
+
+        <div class="row gutters-sm">
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+
+                  <img class="imgset" alt="Student" class="rounded-circle" width="150" src="data:image/<%=items.img_pic.contentType%>;base64,
+                                           <%=items.img_pic.toString('base64')%>">
+                  <div class="mt-3">
+                    <h4><%= items.first_name %></h4>
+                    <p class="text-secondary mb-1">Learner</p>
+                    <p class="text-muted font-size-sm"><%= items.course %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-8">
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Full Name</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <%= items.first_name + " "+items.last_name %>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Roll No.</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <%= items.roll_no %>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Email</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <%= items.email %>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Phone</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <%= items.phone %>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Parent's Name</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <%= items.prtname %>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Address</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <%= items.address %>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <a class="btn btn-info" href="editprof" role="button">
+                      Edit Profile
+                    </a>
+                  </div>
+                  <div class="col-sm-12">
+                    <a class="btn btn-info" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                      Change Password
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                      <div class="card card-body">
+                        <form class="" action="editpassword" method="post">
+                          <label for="password">Change Password</label>
+                          <input style="margin-left:20px;" type="password" name="password" value="">
+                          <button type="submit" Class="btn btn-primary">Submit</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <%if(items.notify!="") {%>
+                  <h5 class="text-center" style="color:red"><%=items.notify%></h5>
+                <%}%>
+                <h6> <a class="text-center" href="<%=items.link%>">Pay</a></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div >
+    <div class="body-container" id="feedbackform" style="display:none;">
+      <form method="POST" action="/feedback-update">
+        <h2 class="heading">Feedback Form</h2>
+        <hr style="border: solid 1px black;">
+        <input type="text" name="subject" placeholder="Subject" required><br />
+        <textarea name="comment" placeholder="Comment..." required></textarea><br />
+        <input type="submit" text="SUBMIT">
+      </form>
+    </div>
+  </div>
+
+  <div >
+    <div class="body-container" id="askdoubtform" style="display:none;">
+      <div class="card" style="width: 30rem;margin-left:27%;">
+        <div class="card-body" >
+      <form method="POST" enctype="multipart/form-data" action="/askdoubt">
+        <div class="form-group">
+            <label class="text-left" style="font-weight: 650" for="exampleFormControlSelect1">SUBJECT</label>
+            <select class="form-control" name="subject" id="exampleFormControlSelect1" required>
+              <option value="Chemistry">Chemistry</option>
+              <option value="Mathematics">Mathematics</option>
+              <option value="Physics">Physics</option>
+            </select>
+          </div>
+          <br>
+          <div class="form-group">
+            <label style="font-weight: 650;" for="topic">Topic</label>
+            <input style="padding-top:5px" type="text" id="topic" name="topic" placeholder="Topic,Subtopic,Tags" value="">
+          </div><br>
+          <div class="form-group">
+             <label class="text-left" style="font-weight: 650" for="exampleFormControlFile1">IMAGE</label>
+             <input style="margin-left:10%" type="file" name="image" class="form-control-file text-left" accept="image/jpeg" id="exampleFormControlFile1">
+         </div><br>
+         <div class="form-group">
+    <label class="text-left" style="font-weight: 650" for="exampleFormControlTextarea1">QUESTION</label>
+    <textarea class="form-control" name="question" id="exampleFormControlTextarea1" rows="3" required></textarea>
+  </div>
+  <div class="form-group">
+<button class="btn btn-info" type="submit" name="button">Submit</button>
+</div>
+      </form>
+    </div>  </div>
+    </div>
+  </div>
+
+
+  <script>
+    $("#showfeedbackform").click(function() {
+      $("#profile").hide();
+      $("#askdoubtform").hide();
+      $("#feedbackform").show();
+    });
+    $("#showprofile").click(function() {
+      $("#feedbackform").hide();
+      $("#askdoubtform").hide();
+      $("#profile").show();
+    });
+    $("#showdoubtform").click(function() {
+      $("#feedbackform").hide();
+      $("#profile").hide();
+      $("#askdoubtform").show();
+    });
+  </script>
+</body>
+
+</html>

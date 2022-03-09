@@ -1,0 +1,223 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>ExcelJee | Admin</title>
+  <link rel="shortcut icon" href="image/favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/user-style.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <div class="sidebar-container">
+    <div class="sidebar-logo">
+      ExcelJee | Admin
+    </div>
+    <ul class="sidebar-navigation">
+      <li>
+        <a class="inner-a" id="show-dashboard">
+          <i class="fa fa-home" aria-hidden="true"></i> Dashboard
+        </a>
+      </li>
+      <li class="dropdown show">
+        <a class="dropdown-toggle" style="background-color:transparent;" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user" aria-hidden="true"></i> User</a>
+        <div class="dropdown-menu" style="background-color:black; " aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item ssss" style="padding-left:25px;color:white;" href="user?a=student">
+            Student
+          </a>
+          <a class="dropdown-item ssss" style="padding-left:25px;" href="user?a=teacher">
+            Teacher
+          </a>
+        </div>
+      </li>
+      <li>
+        <a href="seett-admin">
+          <i class="fa fa-file-alt" aria-hidden="true"></i> Timetable
+        </a>
+      </li>
+      <li class="dropdown show">
+        <a class="dropdown-toggle" style="background-color:transparent;" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-file-alt" aria-hidden="true"></i> Online Exam</a>
+        <div class="dropdown-menu" style="background-color:black; " aria-labelledby="dropdownMenuLink">
+          <a id="showupdateTT" class="dropdown-item ssss" style="padding-left:25px;color:white;">
+            Schedule Exam
+          </a>
+          <a class="dropdown-item ssss" style="padding-left:25px;" href="online-exam">
+            Customize Exam
+          </a>
+        </div>
+      </li>
+      <li class="dropdown show">
+        <a class="dropdown-toggle" style="background-color:transparent;" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i> Online Class</a>
+        <div class="dropdown-menu" style="background-color:black; " aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item ssss " style="padding-left:25px;color:white;" id="showcreatemeetingform">
+            Create Meeting
+          </a>
+        </div>
+      </li>
+      <li class="dropdown show">
+        <a class="dropdown-toggle" style="background-color:transparent;" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-file-pdf" aria-hidden="true"></i> File</a>
+        <div class="dropdown-menu" style="background-color:black; " aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item ssss" style="padding-left:25px;" href="showfile">
+            Show/Delete
+          </a>
+          <a class="dropdown-item ssss" style="padding-left:25px;" href="uploadfile">
+            Upload
+          </a>
+        </div>
+      </li>
+      <li>
+        <a href="fees">
+          <i class="fa fa-money" aria-hidden="true"></i> Fees
+        </a>
+      </li>
+      <li>
+        <a href="salary">
+          <i class="fa fa-money" aria-hidden="true"></i> Salary
+        </a>
+      </li>
+      <!-- <li>
+        <a href="manage-batch">
+          <i class="fa fa-clock" aria-hidden="true"></i> Batch
+        </a>
+      </li> -->
+      <li class="dropdown show">
+        <a class="dropdown-toggle" style="background-color:transparent;" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-clock" aria-hidden="true"></i> Batch</a>
+        <div class="dropdown-menu" style="background-color:black; " aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item ssss" style="padding-left:25px;" href="manage-batch">
+            Manage
+          </a>
+        </div>
+      </li>
+      <li>
+        <a href="show-feedbacks">
+          <i class="fa fa-info-circle" aria-hidden="true"></i> FeedBack
+        </a>
+      </li>
+      <li>
+        <a href="logout">
+          <i class="fa fa-sign-out-alt" aria-hidden="true"></i> Logout
+        </a>
+      </li>
+
+    </ul>
+  </div>
+  <div id="dashboard">
+    <div class="container body-container">
+      <div class="row">
+        <br />
+      </div>
+      <div class="row text-center">
+        <div class="col">
+          <div class="counter">
+            <i class="fa fa-code fa-2x"></i>
+            <p class="count-text ">Site Visit</p>
+            <h5><%= items.site %></h5>
+          </div>
+        </div>
+        <div class="col">
+          <div class="counter">
+            <i class="fa fa-user-graduate fa-2x"></i>
+            <p class="count-text ">Student</p>
+            <h5><%= items.user %></h5>
+          </div>
+        </div>
+        <div class="col">
+          <div class="counter">
+            <i class="fa fa-user fa-2x"></i>
+            <p class="count-text ">Employee</p>
+            <h5><%= items.employee %></h5>
+          </div>
+        </div>
+        <div class="col">
+          <div class="counter">
+            <i class="fa fa-money-check-alt fa-2x"></i>
+            <p class="count-text ">Sales</p>
+            <h5><%= items.sales%></h5>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:5%;">
+        <h6>Register Students</h6>
+        <% newuser.forEach(function(user) { %>
+          <%if(user.course== "none"){%>
+        <a href="newuser?index=<%=user._id%>&o=1">
+          <div class="alert alert-primary" role="alert">
+            Name: <%=user.first_name%> <%=user.last_name%> Email: <%=user.email%>
+          </div>
+        </a>
+        <%}%>
+        <%})%>
+      </div>
+    </div>
+  </div>
+  <div class="body-container">
+    <br><br>
+    <div style="display:none" id="updateTT">
+      <form method="POST" action="timetable-update">
+        <h2 class="heading">Schedule Exam</h2>
+        <hr style="border: solid 1px black;">
+        <label class="labelName">Batch : </label><input type="text" name="batch" required><br />
+        <label class="labelName">Subject : </label><input type="text" placeholder="Enter Topic" maxlength="20" name="topic" required><br />
+        <label>Date : </label><input type="date" name="date" required><br />
+        <label>Start Time : </label><input type="time" name="start_time" required>
+        <label>Duration : <input type="number" placeholder="In Minutes" name="duration" required><br /></label>
+        <input text="SUBMIT" type="submit">
+      </form>
+    </div>
+  </div>
+  <div class="body-container">
+    <div style="display:none" id="createmeetingform">
+      <h5>Create Meeting</h5><br>
+      <form action="/createmeeting" method="post">
+        <div class="card">
+          <div class="card-body">
+            <label>Batch</label>
+            <input type="text" name="batch" required><br />
+            <label for="topic">Topic</label>
+            <input type="text" name="topic" required><br>
+            <label for="date">Date</label>
+            <input type="date" name="date" required><br>
+            <label for="time">Time</label>
+            <input type="time" name="time" required><br>
+            <label for="duration">Duration</label>
+            <input type="number" name="duration" required><br>
+            <input class="btn btn-primary" type="submit" value="Submit">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    $("#show-dashboard").click(function() {
+      $("#updateTT").hide();
+      $("#createmeetingform").hide();
+      $("#dashboard").show();
+    });
+    $("#showupdateTT").click(function() {
+      $("#dashboard").hide();
+      $("#createmeetingform").hide();
+      $("#updateTT").show();
+    });
+    $("#showcreatemeetingform").click(function() {
+      $("#dashboard").hide();
+      $("#updateTT").hide();
+      $("#createmeetingform").show();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<html>
+
+<head>
+  <title>Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="image/favicon.png" type="image/png">
+  <link rel="stylesheet" type="text/css" href="/css/regform.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+
+
+  <script type="text/javascript" src="/js/reg-form.js"></script>
+  <!-----  <script type="text/javascript" src="valid.js"></script>---->
+</head>
+
+<body>
+  <div class="grad1">
+    <center>
+      <a href="\">
+        <img class="set-logo" src="image/logo.png" alt="logo">
+      </a>
+    </center>
+  </div>
+  <!-- MultiStep Form -->
+  <div class="container-fluid grad1">
+    <div class="row justify-content-center mt-0">
+      <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+        <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+          <h2 class="heading"><strong>Sign Up</strong></h2>
+          <div class="row">
+            <div class="col-md-12 mx-0">
+              <form id="msform" action="submit-form" enctype="multipart/form-data" method="POST">
+                <!-- progressbar -->
+                <ul id="progressbar">
+                  <li class="active" id="account"><strong>Account</strong></li>
+                  <li id="validation"><strong>Verify</strong></li>
+                  <li id="personal"><strong>Personal</strong></li>
+                  <li id="payment"><strong>Payment</strong></li>
+                </ul>
+                <fieldset>
+                  <div class="form-card">
+                    <input style="display:none;" name="message" value="<%= message %>">
+                    <h2 class="fs-title">Account Information</h2> <input type="text" id="fname" name="fname" placeholder="First Name" required /> <input type="text" id="lname" name="lname" placeholder="Last Name" />
+                    <span id="namemsg" style="color:red; font-family: 'Rubik', sans-serif;"></span> <input type="email" id="email" name="email" placeholder="Email Id" required />
+                  </div> <input type="button" name="next" class="next action-button" value="Next Step" />
+                </fieldset>
+                <fieldset>
+                  <div class="form-card">
+                    <h2 class="fs-title">Verify E-mail</h2>
+                    <p>The OTP has been sent to your email</p><br> <input type="number" name="otp" placeholder="Enter OTP">
+                    <!---<input type="button" name="sendotp" class="action-button" onclick="OtpCheck" value="Verify">---> <span id="pmsg" style="color:red; font-family: 'Rubik', sans-serif;"></span>
+                  </div>
+                  <!---<input type="button" name="previous" class="previous action-button-previous" value="Previous" />---> <input type="button" name="next" class="next action-button" value="Next Step" />
+                </fieldset>
+                <fieldset>
+                  <div class="form-card">
+                    <h2 class="fs-title">Details</h2>
+                    <input type="text" name="pname" placeholder="Parent's Name" required /> <span id="palert"></span>
+                    <input type="number" name="phno" placeholder="Parent Contact No." maxlength="10" required /> <span id="numloc"></span>
+                    <input type="number" name="phno_2" maxlength="10" placeholder="Alternate Contact No. (Optional)" />
+                    <textarea name="address" placeholder="Enter address" required></textarea>
+                    <input type="text" name="city" placeholder="City" required />
+                    <input type="text" name="state" placeholder="State" required /> <span id="csalert"></span>
+                    <!--  <label>Course : </label>
+                    <label class="container">1 Year Course
+                      <input type="radio" name="course" value="1 Year Course" required>
+                      <span class="check"></span>
+                    </label>
+                    <label class="container">2 Year Course
+                      <input type="radio" name="course" value="2 Year Course">
+                      <span class="check"></span>
+                    </label>--->
+                    <br>
+                    <div class="form-group">
+                      <label for="file">Select your passport size photograph*</label><br>
+                      <input id="file" type="file" name="picfile" value="" accept="image/jpeg" required />
+                    </div>
+
+                  </div>
+                  <button name="savedetails" class="next action-button">Next</button>
+                </fieldset>
+
+                <fieldset>
+                  <div class="form-card">
+                    <h2 class="fs-title">Payment </h2> <br>
+                    <label>Course : </label>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">1 Year Course</h5>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+                              Know More
+                            </button><br>
+                            <p>2 months advance for the time of admission</p>
+                            <a class="btn btn-primary" href="https://rzp.io/l/MUTP8Pn">Pay 7000</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">2 Year Course</h5>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal1">
+                              Know More
+                            </button><br>
+                            <p>2 months advance for the time of admission</p>
+                            <a class="btn btn-primary" href="https://rzp.io/l/mG8rSEZ2">Pay 4000</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">About 1 Year Course</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Full Description
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel1">About 2 Year Course</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Full Description
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

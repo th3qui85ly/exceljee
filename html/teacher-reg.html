@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/teacher-reg.css">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/popper-min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-min.js"></script>
+    <script type="text/javascript" src="js/teacher-reg.js"></script>
+    <script type="text/javascript" src="js/valid.js"></script>
+
+    <title>Teacher's Registration | ExcelJEE</title>
+  </head>
+  <body>
+  
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7 py-5">
+            <h3 style="font-family: 'Rubik', sans-serif; font-weight: 400;">Teacher Registration</h3>
+            <p class="mb-4">Enter the details</p>
+            <form id="tform" action="/teacher-form" enctype="multipart/form-data" method="POST" onsubmit="func()">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" placeholder="Enter first name" name="fname" id="fname" required>
+                  </div>    
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Enter last name" name="lname" id="lname" required>
+                  </div>    
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group first">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" placeholder="Enter your email (e.g. john@your-domain.com)" name="email" id="email" required>
+                  </div>    
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group first">
+                    <label for="sub">Subject specification</label>
+                    <input type="text" class="form-control" placeholder="Enter your subject (e.g. Physics, Chemistry, etc)" name="sub" id="sub" required>
+                  </div>    
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="phno">Phone Number</label>
+                    <input type="text" class="form-control" placeholder="Enter phone number" name="phno" id="phno" required>
+                  </div>    
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="qualif">Qualification</label>
+                    <input type="text" class="form-control" placeholder="e.g. 10+2, Graduation, PG, Doctorate" name="qualif" id="qualif" required>
+                  </div>    
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+              
+                  <div class="form-group last mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" placeholder="Your Password" name="pwd" id="pwd" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+              
+                  <div class="form-group last mb-3">
+                    <label for="re-password">Re-type Password</label>
+                    <input type="password" class="form-control" placeholder="Your Password" name="cpwd" id="cpwd" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="file">Select your passport size photograph* (formats allowed : .jpg/.jpeg)</label><br>
+                    <input type="file" name="pic" value="" accept="image/*"  required/>
+                </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="d-flex mb-5 mt-4 align-items-center">
+                      <div class="d-flex align-items-center">
+                        <label for="coursetype" style="margin-right: 10px;">Course want to allot</label><br>
+                        <label class="control control--radio mb-0"><span class="caption" style="margin-right: 10px;">1 Year Course</span>
+                          <input type="radio" name="coursetype" value="1 Year Course" required/>
+                          <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--radio mb-0"><span class="caption" style="margin-right: 10px;">2 Year Course</span>
+                          <input type="radio" name="coursetype" value="2 Year Course"/>
+                          <div class="control__indicator"></div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <input type="submit" value="Register" class="btn px-5 btn-primary">
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/teacher-reg.js"></script>
+  </body>
+</html>

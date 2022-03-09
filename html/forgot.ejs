@@ -1,0 +1,69 @@
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="author" content="Kodinger">
+	<link rel="shortcut icon" href="image/favicon.png" type="image/png">
+	<title>Forgot Password</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/my-login.css">
+
+</head>
+<body class="my-login-page">
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center align-items-center h-100">
+				<div class="card-wrapper">
+					<div >
+						<a href="/">
+						<img class="set-logo" src="image/logo.png" alt="bootstrap 4 login page">
+						</a>
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+								<h6 class="text-center" style="color:red;"><%= error %></h6>
+							<h4 class="card-title">Forgot Password</h4>
+							<form method="post" class="my-login-validation" action="validateEmailForgotPass">
+								<div class="form-group">
+									<label for="email">E-Mail Address</label>
+									<input id="email" type="email" class="form-control" name="fg_email" required autofocus>
+
+									<div class="form-text text-muted">
+										By clicking "Send OTP" we will send a  OTP to verify its you (Check Spam)
+									</div>
+								</div>
+
+								<div class="form-group m-0">
+									<button type="submit" id="myButton" onclick="showDiv()" class="btn btn-primary btn-block">
+									Send OTP
+									</button>
+								</div>
+								<br>
+							</form>
+							<form class="" action="reset-pass" method="get">
+								<div id="myDiv" style="display:none;" class="">
+									<label for="otp">Enter OTP</label>
+									<input id="otp" type="OTP" class="form-control" name="otp" required value="" >
+									<div class="form-group m-0">
+										<div >
+									   <br></div>
+										<button class="btn btn-primary btn-block " type="submit">
+											Reset Password
+										</button>
+									</div>
+								</div>
+								</form>
+						</div>
+					</div>
+					<div class="footer">
+						Copyright &copy; 2021 &mdash; ExcelJEE
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="js/my-login.js"></script>
+</body>
+</html>

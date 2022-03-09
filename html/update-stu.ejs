@@ -1,0 +1,67 @@
+
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="image/favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="css/teacher-reg.css">
+  <title>Update Profile | ExcelJEE</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-md-7 py-5">
+        <h3 style="font-family: 'Rubik', sans-serif; font-weight: 400;">Edit Profile</h3>
+        <p class="mb-4">Enter the details</p>
+        <form  action="/editprof"  method="POST">
+          <div class="row">
+            <div class="col-md-6">
+              <label for="fname">First Name</label>
+              <input type="text" name="fname" id="fname" required value=<%=items.first_name%>>
+            </div>
+            <div class="col-md-6">
+              <label for="lname">Last Name</label>
+              <input type="text" name="lname" id="lname" required value=<%=items.last_name%>>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <label for="pname">Parent's Name</label>
+              <input type="text" name="pname" id="pname" required value=<%=items.prtname%>>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <label for="address">Address</label>
+              <input type="text" name="address" id="address" required value=<%=items.address%>>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="phn">Phone Number</label>
+              <input type="text" name="phn" id="phn" max-length=10 required value=<%=items.phone%>>
+            </div>
+            <div class="col-md-6">
+              <label for="city">City</label>
+              <input type="text" name="city" id="city" required value=<%=items.city%>>
+            </div>
+          </div>
+          <br>
+
+          <input type="submit" value="UPDATE" class="btn px-5 btn-primary">
+
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

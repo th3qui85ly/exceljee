@@ -1,0 +1,54 @@
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>ExcelJee | User</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="image/favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body><br>
+  <input type="button" value="<" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 1em; font-weight:300; margin-left: 1.5em;" onclick="history.back(-1)" />
+  <div class="justify-end">
+    <form class="form-inline my-2 my-lg-0" action="/usearch" method="get">
+      <input class="form-control mr-sm-2" style="float: right;" type="text" name="dsearch" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" style="float: right;" type="submit">Search</button>
+    </form>
+  </div>
+  <h5 class="text-center">Students</h5><br>
+  <div class="table-responsive-sm">
+    <table style="width:90%;margin-left:4%;" class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Id</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">View</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% var c= 0; %>
+        <%items.forEach(function(user) { %>
+        <%c=c+1; %>
+        <tr>
+          <th scope="row"><%=c%></th>
+          <td><%=user.first_name%> <%=user.last_name%></td>
+          <td><%=user.roll_no%></td>
+          <td><%=user.email%></td>
+          <td><%=user.phone%></td>
+          <td> <a href="newuser?index=<%=user._id%>&o=2">View</a> </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

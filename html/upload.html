@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExcelJee | Studymaterial Upload</title>
+  <link rel="shortcut icon" href="image/favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <style>
+    .signup-form {
+      width: 350px;
+      margin: 0 auto;
+      padding: 10px 0;
+    }
+
+    .signup-form h2 {
+      color: #636363;
+      margin: 0 0 5px;
+      position: relative;
+      text-align: center;
+    }
+
+    .signup-form form {
+      color: #999;
+      border-radius: 3px;
+      margin-bottom: 15px;
+      background: #f2f3f7;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+      padding: 30px;
+    }
+
+    .signup-form .form-group {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <br>
+  <h3 class="text-center">Upload Files</h3>
+  <hr>
+  <div class="signup-form">
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        File Type <br>
+        <input type="radio" class="vidu" checked id="image" name="filetype" value="image">
+        <label for="image">Image</label>
+        <input type="radio" class="vidu" id="pdf" name="filetype" value="pdf">
+        <label for="pdf">Pdf</label>
+      </div>
+      <div class="form-group">
+        <label for="cars">Subject</label><br>
+        <select name="subject" id="cars">
+          <option value="Chemistry">Chemistry</option>
+          <option value="Mathematics">Mathematics</option>
+          <option value="Physics">Physics</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="name">Topic Name</label><br>
+        <input type="text" id="name" placeholder="No Symbol and Space"  value="" name="topic" required>
+      </div>
+      <div class="form-group">
+        <label for="desc">Description</label><br>
+        <textarea id="desc" name="desc" value="" rows="2" placeholder="Description" required>
+                </textarea>
+      </div>
+      <div class="form-group">
+        <label for="file">Upload File</label><br>
+        <input type="file" id="file" name="file" value="" required>
+      </div>
+      <div class="form-group text-center">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+
+</html>

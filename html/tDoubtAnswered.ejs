@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Excel Classes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="image/favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <style>
+    .imgset {
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body> <br><br>
+  <div>
+    <input type="button" value="< BACK" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 1em; font-weight:300; margin-left: 1.5em;" onclick="history.back(-1)" />
+    <div class="container">
+      <table style="width:100%;" class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Topic</th>
+            <th scope="col">Date</th>
+            <th scope="col">Answer Code</th>
+            <th scope="col">Answer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% items.forEach(function(data) { %>
+          <tr>
+            <td><%= data.topic %></td>
+            <td><%= data.createdAt %></td>
+            <%if(data.code==0){%>
+            <td>-</td>
+            <%}else{%>
+            <td><%= data.code %></td>
+            <%}%>
+            <td><a class="btn btn-info" href="answerdoubt?i=<%=data._id%>">Answer</a>
+            </td>
+          </tr>
+          <%})%>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+body{
+    text-align: center;
+  }
+.sidebar-container {
+  position: fixed;
+  width: 220px;
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #1a1a1a;
+  color: #fff;
+}
+.body-container{
+  margin-left: 220px;
+}
+
+.content-container {
+  padding-top: 20px;
+}
+
+.sidebar-logo {
+  padding: 10px 28px 10px 15px;
+  font-size: 20px;
+  background-color: #2574A9;
+}
+
+.sidebar-navigation {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  position: relative;
+}
+
+.sidebar-navigation li {
+  background-color: transparent;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  line-height: 20px;
+  padding-left: 0;
+  margin-left:0;
+}
+
+.sidebar-navigation li a {
+  padding: 15px 25px 15px 15px;
+  display: block;
+  color: #fff;
+}
+
+.sidebar-navigation li .fa .fas {
+  margin-right: 12px;
+}
+
+.sidebar-navigation li a:active,
+.sidebar-navigation li a:hover,
+.sidebar-navigation li a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+.inner-a{
+  color: white;
+}
+
+.ssss:hover,
+.ssss:active{
+  background-color: #2574A9;
+}
+
+.sidebar-navigation li::before{
+  background-color: #2574A9;
+  position: absolute;
+  content: '';
+  height: 100%;
+  left: -10px;
+  top: 0;
+
+  width: 3px;
+  z-index: -1;
+}
+
+.sidebar-navigation li:hover::before {
+  width: 100%;
+}
+
+.sidebar-navigation .header {
+  font-size: 12px;
+  text-transform: uppercase;
+  background-color: #151515;
+  padding: 10px 15px 10px 30px;
+}
+
+.sidebar-navigation .header::before {
+  background-color: transparent;
+}
+.sidebar-navigation li a:active,
+.sidebar-navigation li a:focus{
+background-color: #2574A9;
+}
+
+.content-container {
+  padding-left: 220px;
+}
+ .social_media{
+   margin-left: 5%;
+   display: flex;
+   margin-top:50%;
+
+}
+
+ .social_media_icon{
+  display: block;
+  width: 20%;
+  height:20%;
+  background: #594f8d;
+  text-align: center;
+  color: #bdb8d7;
+  border-radius: 50%;
+  margin:5% ;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+
+}
+.social_media_icon:hover{
+  box-shadow:  3px 3px 11px #c8c1dc,
+             -3px -3px 11px #c8c1dc;
+}
+.icon{
+  margin:1%;
+  color:white;
+}
+
+
+/* Dashboard */
+
+.counter {
+    background-color:#f5f5f5;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.fa-2x {
+    margin: 0 auto;
+    float: none;
+    display: table;
+    color: #4ad1e5;
+}
